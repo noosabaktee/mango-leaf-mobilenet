@@ -28,7 +28,6 @@ async function predictImage(imageElement) {
         .toFloat()
         .expandDims()
         .div(255.0)
-    console.log(imageTensor)
     const predictions = await model.predict(imageTensor).data();
     displayPrediction(predictions);
 }
@@ -45,7 +44,6 @@ function displayPrediction(predictions) {
         ]; // Ganti dengan nama kelas sebenarnya
     let predictionResult = "Prediction probabilities:\n";
     predictions.forEach((prob, index) => {
-        console.log(prob)
         predictionResult += `${classes[index]}: ${(prob * 100).toFixed(2)}%\n`;
     });
     const maxIndex = predictions.indexOf(Math.max(...predictions));
@@ -55,6 +53,7 @@ function displayPrediction(predictions) {
 
 document.getElementById('imageUpload').addEventListener('change', (event) => {
     const imageFile = event.target.files[0];
+    document.getElementById('predictionClass').textContent = 'loading.....';
     if (imageFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
