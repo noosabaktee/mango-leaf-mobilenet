@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#imageUpload {
+    margin-bottom: 20px;
+}
+
+#imageContainer img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#predictionResult {
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+#predictionClass {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: pre-line;
+}
